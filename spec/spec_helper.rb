@@ -2,6 +2,10 @@ require 'bundler'
 
 Bundler.require(:default, :test)
 
+require 'coveralls'
+
+Coveralls.wear!
+
 require 'scrum_planner'
 
 RSpec.configure do |config|
