@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.licenses              = ['MIT']
   s.version               = ScrumPlanner::Version::VERSION
   s.date                  = ScrumPlanner::Version::DATE
-  
+
   s.authors               = ['Mario Carrion']
   s.email                 = 'info@carrion.ws'
   s.homepage              = 'https://github.com/mariocarrion/scrum-planner'

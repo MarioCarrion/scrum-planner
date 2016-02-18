@@ -10,7 +10,6 @@ end
 group :test do
   gem 'coveralls',                    require: false
   gem 'rspec'
-  gem 'rubocop'
   gem 'rubocop',                      require: false
   gem 'rubocop-checkstyle_formatter', require: false
   gem 'rubocop-rspec',                require: false

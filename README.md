@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/mariocarrion/scrum-planner/badge.svg?branch=master)](https://coveralls.io/github/mariocarrion/scrum-planner?branch=master) [![Build Status](https://travis-ci.org/mariocarrion/scrum-planner.svg?branch=master)](https://travis-ci.org/mariocarrion/scrum-planner)
+[![Coverage Status](https://coveralls.io/repos/github/mariocarrion/scrum-planner/badge.svg?branch=master)](https://coveralls.io/github/mariocarrion/scrum-planner?branch=master) [![Build Status](https://travis-ci.org/mariocarrion/scrum-planner.svg?branch=master)](https://travis-ci.org/mariocarrion/scrum-planner) [![Code Climate](https://codeclimate.com/github/mariocarrion/scrum-planner/badges/gpa.svg)](https://codeclimate.com/github/mariocarrion/scrum-planner)
 
 # What is Scrum Planner?
 
