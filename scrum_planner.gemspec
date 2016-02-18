@@ -9,10 +9,14 @@ Gem::Specification.new do |s|
   s.authors               = ['Mario Carrion']
   s.email                 = 'info@carrion.ws'
   s.homepage              = 'https://github.com/mariocarrion/scrum-planner'
+
   s.summary               = 'Scrum Planner helps you plan your iterations'
   s.description           = 'Scrum Planner is a collection of programs for '\
                             'helping you planning your Scrum iterations.'
-  s.files                 = ['lib/scrum_planner.rb']
+
+  s.files                 = `git ls-files`.split("\n")
+  s.test_files            = `git ls-files -- {spec}`.split("\n")
+  s.require_path          = 'lib'
 
   s.required_ruby_version = '~> 2.2'
 

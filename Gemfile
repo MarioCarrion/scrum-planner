@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.2.0'
 
-group :development do
+group :development, :test do
   gem 'pry'
   gem 'pry-nav'
 end

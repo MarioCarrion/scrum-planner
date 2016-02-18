@@ -5,3 +5,7 @@ AllCops:
   Exclude:
     - 'spec/spec_helper.rb'
     - 'Gemfile'
+
+BlockDelimiters:
+  Exclude:
+    - 'spec/**/*.rb'
