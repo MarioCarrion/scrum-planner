@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.2.0'
 
+gemspec
+
 group :development, :test do
   gem 'pry'
   gem 'pry-nav'

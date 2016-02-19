@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'scrum_planner'
+require 'scrum_planner/commands'
+
+ScrumPlanner::Commands.start

@@ -20,12 +20,14 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '~> 2.2'
 
-  s.add_development_dependency 'pry',                          '~> 0.10.3'
-  s.add_development_dependency 'pry-nav',                      '~> 0.2.4'
-  s.add_development_dependency 'rspec',                        '~> 3.3.2'
-  s.add_development_dependency 'rubocop',                      '~> 0.37.2'
-  s.add_development_dependency 'rubocop-checkstyle_formatter', '~> 0.2.0'
-  s.add_development_dependency 'rubocop-rspec',                '~> 1.4.0'
-  s.add_development_dependency 'timecop',                      '~> 0.8.0'
-  s.add_development_dependency 'coveralls',                    '~> 0.8.10'
+  s.add_runtime_dependency     'thor',                         '~> 0.19'
+
+  s.add_development_dependency 'coveralls',                    '~> 0.8'
+  s.add_development_dependency 'pry',                          '~> 0.10'
+  s.add_development_dependency 'pry-nav',                      '~> 0.2'
+  s.add_development_dependency 'rspec',                        '~> 3.3'
+  s.add_development_dependency 'rubocop',                      '~> 0.37'
+  s.add_development_dependency 'rubocop-checkstyle_formatter', '~> 0.2'
+  s.add_development_dependency 'rubocop-rspec',                '~> 1.4'
+  s.add_development_dependency 'timecop',                      '~> 0.8'
 end

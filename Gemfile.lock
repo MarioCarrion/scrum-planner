@@ -1,3 +1,9 @@
+PATH
+  remote: .
+  specs:
+    scrum_planner (0.0.2)
+      thor (~> 0.19)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -84,6 +90,7 @@ DEPENDENCIES
   rubocop
   rubocop-checkstyle_formatter
   rubocop-rspec
+  scrum_planner!
   timecop
 
 BUNDLED WITH
