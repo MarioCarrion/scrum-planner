@@ -52,6 +52,16 @@ module ScrumPlanner
       today.monday?
     end
 
+    def next_iteration
+      @next_iteration ||= begin
+        next_today = start + ((iteration_number) * length * SECONDS_IN_DAY * 7)
+
+        Iteration.new(start:  @start,
+                      length: @length,
+                      today:  next_today)
+      end
+    end
+
     def start_week?
       (week_number % length) == 1
     end
