@@ -9,24 +9,45 @@ module ScrumPlanner
                   default:  'year',
                   type:     :string,
                   aliases:  '-d'
+
+    method_option :length,
+                  required: true,
+                  desc:     'Length of duration for output',
+                  default:  1,
+                  type:     :numeric,
+                  aliases:  '-l'
     def print_schedule
       validate_options
 
       puts 'Configuring...'
-      iteration = ScrumPlanner::Iteration.new(start:  Time.new(2016, 1, 4),
-                                              length: 2,
-                                              today:  Time.new(2016, 1, 4))
+      @starting_time = Time.new(2016, 1, 4)
+      @length        = options[:length].to_i
 
-      next_iteration = 0
-      while next_iteration < 2
+      iteration = ScrumPlanner::Iteration.new(start:  @starting_time,
+                                              length: 2,
+                                              today:  @starting_time)
+
+      while !breaking_time?(iteration.today)
         puts iteration.humanized_name
         iteration = iteration.next_iteration
-
-        next_iteration += 1 if iteration.today.year == 2017
       end
     end
 
     private
+
+    def breaking_time?(time)
+      time.year == time_with_seconds_to_break.year &&
+        time.month == time_with_seconds_to_break.month
+    end
+
+    def time_with_seconds_to_break
+      @time_with_seconds_to_break ||= begin
+        weeks  = (options[:duration] == 'year' ? 52 : 4) * @length
+        to_add = ScrumPlanner::Iteration.seconds_in_a_week(weeks)
+
+        @starting_time + to_add
+      end
+    end
 
     def validate_options
       unless %w(year month).include?(options[:duration])

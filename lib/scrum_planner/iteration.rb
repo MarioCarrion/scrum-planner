@@ -21,6 +21,12 @@ module ScrumPlanner
 
     SECONDS_IN_DAY = 86_400
 
+    class << self
+      def seconds_in_a_week(weeks)
+        SECONDS_IN_DAY * 7 * weeks
+      end
+    end
+
     def initialize(start:, length:, today:)
       @length = length.to_i
       raise ArgumentError, ':length must be positive value' if @length == 0
@@ -40,7 +46,8 @@ module ScrumPlanner
     end
 
     def humanized_name
-      v = start + ((iteration_number - 1) * length * SECONDS_IN_DAY * 7)
+      v = start + seconds_by_iteration(iteration: (iteration_number - 1),
+                                       weeks:     length)
       v.strftime('%Y-%m-%d')
     end
 
@@ -54,7 +61,9 @@ module ScrumPlanner
 
     def next_iteration
       @next_iteration ||= begin
-        next_today = start + ((iteration_number) * length * SECONDS_IN_DAY * 7)
+        next_today = start + seconds_by_iteration(iteration: iteration_number,
+                                                  weeks:     length)
+
 
         Iteration.new(start:  @start,
                       length: @length,
@@ -86,8 +95,8 @@ module ScrumPlanner
       @ddid ||= ((today - start).to_i / SECONDS_IN_DAY) + 1
     end
 
-    def today_as_numeric_day
-      @today_as_numeric_day ||= today.strftime('%u').to_i
+    def seconds_by_iteration(iteration:, weeks:)
+      (iteration * Iteration.seconds_in_a_week(weeks))
     end
   end
 end
